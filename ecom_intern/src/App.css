@@ -1,0 +1,29 @@
+.navbar-nav a{
+ font-size: 18px;
+} 
+
+.card-img{
+           width: 50%;
+        height: 560px;
+      
+}
+
+.card-title{
+    font-size: 27px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+
+.card-text{
+    font-size: 18px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+
+.col{
+    text-align: center;
+}
+
+ 
