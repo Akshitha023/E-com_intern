@@ -4,13 +4,15 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
     <div className="container">
-      <a className="navbar-brand fw-bold fs-4" data-bs-theme="dark" href="#">Aksh Collections </a>
+      <a className="navbar-brand fw-bold fs-4" 
+      data-bs-theme="dark" 
+      href="#">Aksh Collections </a>
   
       <button className="navbar-toggler" 
       type="button" 
       data-bs-toggle="collapse"
-       data-bs-target="#navbarSupportedContent" 
-       aria-controls="navbarSupportedContent" 
+                data-bs-target="#navbarSupportedContent" 
+                  aria-controls="navbarSupportedContent" 
        aria-expanded="false" 
        aria-label="Toggle navigation">
         <span className="navbar-toggler-icon">
@@ -37,21 +39,9 @@ const Navbar = () => {
           <li className="nav-item">
             <a className="nav-link" href="#"> About</a>
           </li>
-          
-
-
-
 
         </ul>
-
-
-{/*         
-        <form class="d-flex" role="search">
-        <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> */}
-
-
+      
 
         <div className="buttons">
 
@@ -64,8 +54,6 @@ const Navbar = () => {
            
                   <a href= "" className="btn btn-outline-dark ms-2">
 <i className="fa fa-shopping-cart me-1 "> </i>Cart (0) </a>
-           
-
 
         </div>
 
