@@ -204,12 +204,10 @@ const Product = () => {
 
                                                  <strong>Comment: {review.comment} </strong>  <br />
 
-                                                
-
-                                                        <strong>Date:</strong> {new Date(review.date).toLocaleDateString()} <br />
+                            <strong>Date:</strong> {new Date(review.date).toLocaleDateString()} <br />
 
 
-                                                              <strong>ReviewerName: {review.reviewerName} </strong>
+                               <strong>ReviewerName: {review.reviewerName} </strong>
                                          
                    <strong>reviewerEmail: {review.reviewerEmail} </strong>
 
