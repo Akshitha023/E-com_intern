@@ -10,12 +10,21 @@ const Product = () => {
   const [open, setOpen] = useState(false);
 
   const [selectedProduct, setSelectedProduct] = useState();
+  const [searchItem, setSearchItem] = useState('');
+
+
 
   const handleOpen = (product) => {
     setSelectedProduct(product);
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
+
+
+
+
+
+
 
   useEffect(() => {
     let componentMounted = true;
@@ -38,9 +47,6 @@ const Product = () => {
         console.error("Error fetching the products", error);
         setLoading(false);
       }
-
-
-
     };
 
     getProduct();
@@ -54,6 +60,8 @@ const Product = () => {
   }, []);
 
 
+
+
   const Loading = () => {
     return (
       <>
@@ -63,10 +71,30 @@ const Product = () => {
     );
   };
 
+
+
+  const handleSearch = ({ target: { value } }) => {
+    const query = value.toLowerCase();
+    setSearchItem(query);
+
+    setFilter(query ? data.filter(({ title }) => title.toLowerCase().includes(query)) : data);
+  };
+  
+
+
+
+
+
+
   const filterProduct = (cat) => {
     const updatedList = data.filter((product) => product.category === cat);
     setFilter(updatedList);
   };
+
+
+
+
+
 
   const ShowProducts = () => {
     return (
@@ -120,17 +148,19 @@ const Product = () => {
 
                             <h1>Latest Products  </h1>
 
-     <div className="search-bar  me-3">
+     <div className="search  me-3">
 
-            <TextField variant="outlined" size="small" placeholder="Search here..." />
+            <TextField variant="outlined"   size="small"   placeholder="Search here..."   value={searchItem}    onChange={handleSearch}  />
+
 
             <IconButton>
-              <SearchIcon />
+<SearchIcon/>
             </IconButton>
 
                 </div>
         </div>
-                  </div>
+        </div>
+               
 
       <div className="row justify-content-center">
         {loading ? <Loading /> : <ShowProducts />}
@@ -143,6 +173,7 @@ const Product = () => {
         onClose={handleClose}
 
         aria-labelledby="modal-modal-title"
+        
         aria-describedby="modal-modal-description" >
       
         <Box sx={{orientation:"vertical", position: 'relative', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 650, bgcolor: 'background.paper', border: '10px solid #000', boxShadow: 70, p: 3 }}>
@@ -227,11 +258,4 @@ const Product = () => {
               };
 
 export default Product;
-
-
-
-
-
-
-
 
